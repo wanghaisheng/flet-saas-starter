@@ -1,23 +1,26 @@
 from copy import deepcopy
 
 import flet
-from flet import AppBar
-from flet import Card
-from flet import Column
-from flet import Container
-from flet import ElevatedButton
-from flet import IconButton
-from flet import NavigationRail
-from flet import NavigationRailDestination
-from flet import Page
-from flet import Row
-from flet import Stack
-from flet import Switch
-from flet import Text
-from flet import VerticalDivider
-from flet import colors
-from flet import icons
-from flet import ScrollMode
+from flet import (
+    AppBar,
+    Card,
+    Column,
+    Container,
+    ElevatedButton,
+    IconButton,
+    NavigationRail,
+    NavigationRailDestination,
+    Page,
+    Row,
+    ScrollMode,
+    Stack,
+    Switch,
+    Text,
+    VerticalDivider,
+    colors,
+    icons,
+)
+
 # from flet import slugify
 from slugify import slugify
 
@@ -47,8 +50,13 @@ class ResponsiveMenuLayout(Row):
 
         self.expand = True
 
-        self.navigation_items = [navigation_item for navigation_item, _ in pages]
-        self.routes = [f"/{item.pop('route', None) or slugify(item['label'])}" for item in self.navigation_items]
+        self.navigation_items = [
+            navigation_item for navigation_item, _ in pages
+        ]
+        self.routes = [
+            f"/{item.pop('route', None) or slugify(item['label'])}"
+            for item in self.navigation_items
+        ]
         self.navigation_rail = self.build_navigation_rail()
         self.update_destinations()
         self._menu_extended = menu_extended
@@ -81,7 +89,10 @@ class ResponsiveMenuLayout(Row):
 
     @property
     def minimize_to_icons(self) -> bool:
-        return self._minimize_to_icons or (self._landscape_minimize_to_icons and self._portrait_minimize_to_icons)
+        return self._minimize_to_icons or (
+            self._landscape_minimize_to_icons
+            and self._portrait_minimize_to_icons
+        )
 
     @minimize_to_icons.setter
     def minimize_to_icons(self, value: bool):
@@ -115,7 +126,9 @@ class ResponsiveMenuLayout(Row):
         self._menu_extended = value
 
         dimension_minimized = (
-            self.landscape_minimize_to_icons if self.is_landscape() or self.page.width < 1170 else self.portrait_minimize_to_icons
+            self.landscape_minimize_to_icons
+            if self.is_landscape() or self.page.width < 1170
+            else self.portrait_minimize_to_icons
         )
         if not dimension_minimized or self._panel_visible:
             self.navigation_rail.extended = value
@@ -147,7 +160,7 @@ class ResponsiveMenuLayout(Row):
     def build_navigation_rail(self):
         return NavigationRail(
             selected_index=0,
-            label_type="none",
+            label_type='none',
             on_change=self._navigation_change,
         )
 
@@ -156,10 +169,13 @@ class ResponsiveMenuLayout(Row):
         if icons_only:
             navigation_items = deepcopy(navigation_items)
             for item in navigation_items:
-                item.pop("label")
+                item.pop('label')
 
-        self.navigation_rail.destinations = [NavigationRailDestination(**nav_specs) for nav_specs in navigation_items]
-        self.navigation_rail.label_type = "none" if icons_only else "all"
+        self.navigation_rail.destinations = [
+            NavigationRailDestination(**nav_specs)
+            for nav_specs in navigation_items
+        ]
+        self.navigation_rail.label_type = 'none' if icons_only else 'all'
 
     def handle_resize(self, e):
         need_page_update = False
@@ -220,9 +236,23 @@ class ResponsiveMenuLayout(Row):
                     expand=True,
                     on_click=self.toggle_navigation,
                 )
-                self.controls = [Stack(controls=[self.content_area, dismiss_shield, self.menu_panel], expand=True)]
+                self.controls = [
+                    Stack(
+                        controls=[
+                            self.content_area,
+                            dismiss_shield,
+                            self.menu_panel,
+                        ],
+                        expand=True,
+                    )
+                ]
             else:
-                self.controls = [Stack(controls=[self.content_area, self.menu_panel], expand=True)]
+                self.controls = [
+                    Stack(
+                        controls=[self.content_area, self.menu_panel],
+                        expand=True,
+                    )
+                ]
             self.update_destinations()
             self.navigation_rail.extended = self.menu_extended
             self.menu_panel.visible = self._panel_visible
@@ -235,4 +265,3 @@ class ResponsiveMenuLayout(Row):
     def is_landscape(self) -> bool:
         # Return true if window/display is wide
         return self.page.width > self.page.height
-   

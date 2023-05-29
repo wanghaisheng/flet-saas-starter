@@ -1,2 +1,16 @@
-flet>=0.4.0
+flet==0.5.2
+certifi
+chardet
+idna
+requests
+selenium==4.4.3
+urllib3
+ipapi
+func_timeout
+random-word==1.0.7
+pyyaml
+notifiers
+python-slugify
 SQLAlchemy==2.0.2
+isort==5.12.0
+blue==0.9.1
