@@ -1,4 +1,0 @@
-blue==0.9.1
-flet==0.4.0
-pytest==7.2.1
-SQLAlchemy==2.0.2

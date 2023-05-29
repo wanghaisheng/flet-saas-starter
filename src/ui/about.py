@@ -1,10 +1,10 @@
-import flet as ft
 import webbrowser
 
+import flet as ft
 
 __VERSION__ = 1.4
-__AUTHOR__ = "Farshad"
-__ID__ = "Farshadz1997"
+__AUTHOR__ = 'Farshad'
+__ID__ = 'Farshadz1997'
 __CONTENT__ = f"""
 **Version: {__VERSION__}**
 
@@ -52,21 +52,22 @@ SOFTWARE."""
 class About(ft.UserControl):
     def __init__(self, parent, page: ft.Page):
         from .app_layout import UserInterface
+
         super().__init__()
         self.parent: UserInterface = parent
         self.page = page
         self.ui()
         self.page.update()
-    
+
     def ui(self):
         self.title = ft.Row(
             controls=[
                 ft.Text(
-                    value="About",
-                    font_family="SF thin",
+                    value='About',
+                    font_family='SF thin',
                     size=24,
                     weight=ft.FontWeight.BOLD,
-                    text_align="center",
+                    text_align='center',
                     expand=True,
                 ),
             ]
@@ -75,9 +76,20 @@ class About(ft.UserControl):
             value=__CONTENT__,
             selectable=True,
             extension_set=ft.MarkdownExtensionSet.GITHUB_WEB,
-            on_tap_link=lambda e: webbrowser.open(e.data)
+            on_tap_link=lambda e: webbrowser.open(e.data),
         )
-        self.license_label = ft.Row([ft.Text("LICENSE", font_family="SF thin", size=18, weight=ft.FontWeight.BOLD, text_align="center", expand=True)])
+        self.license_label = ft.Row(
+            [
+                ft.Text(
+                    'LICENSE',
+                    font_family='SF thin',
+                    size=18,
+                    weight=ft.FontWeight.BOLD,
+                    text_align='center',
+                    expand=True,
+                )
+            ]
+        )
         self.license = ft.Markdown(__LICENSE__)
         self.about_card = ft.Card(
             expand=True,
@@ -91,16 +103,16 @@ class About(ft.UserControl):
                         ft.Divider(),
                         self.content,
                         self.license_label,
-                        self.license
-                    ]
-                )
-            )
+                        self.license,
+                    ],
+                ),
+            ),
         )
-    
+
         self.about_page_content = ft.Column(
-            scroll="auto",
+            scroll='auto',
             alignment=ft.MainAxisAlignment.START,
-            horizontal_alignment="stretch",
+            horizontal_alignment='stretch',
             expand=True,
             controls=[
                 ft.Container(
@@ -110,15 +122,13 @@ class About(ft.UserControl):
                         alignment=ft.MainAxisAlignment.START,
                         controls=[
                             ft.Row(
-                                controls=[self.about_card],
-                                alignment="center"
+                                controls=[self.about_card], alignment='center'
                             ),
                         ],
                     ),
                 )
-            ]
+            ],
         )
-    
+
     def build(self):
         return self.about_page_content
-        

@@ -2,25 +2,27 @@
 This is or model layer.
 """
 # python
-from typing import Optional
-from typing import List
+from typing import List, Optional
 
 # 3rd
-from sqlalchemy import Boolean
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import (
+    Boolean,
+    Column,
+    ForeignKey,
+    Integer,
+    String,
+    create_engine,
+)
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import (
+    Session,
+    declarative_base,
+    relationship,
+    sessionmaker,
+)
 
 # local
 from src.utils import constants
-
 
 Base = declarative_base()
 
