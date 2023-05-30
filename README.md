@@ -21,7 +21,7 @@ if you are a python guy and looking for a saas solution ,take a look at this
   <h3 align="center">✨ Free Pure python Flet based multi-platfform desktop APP  template for SaaS startups ✨</h3>
 
   <p align="center">
-    Everything you need to build a great multi-platfform desktop APP  for your startup. Great SEO metrics, Green WebVitals, 🚀 Performance, Clean & Pragmatic Codebase out of the box.
+    Everything you need to build a great multi-platfform desktop APP  for your idea.
     <br/>
     <br/>
     <a href="">View Demo</a>
@@ -48,14 +48,14 @@ if you are a python guy and looking for a saas solution ,take a look at this
 ## Features
 
 - [x] User account sign up, sign in, password reset, all through asynchronous email confirmation.
-- [] Form generation.
-- [] Error handling.
-- [] HTML macros and layout file.
-- [] "Functional" file structure.
-- [] Python 3.x compliant.
-- [] Asynchronous AJAX calls.
-- [] Administration panel.
-- [] Logging.
+- [ ] Form generation.
+- [ ] Error handling.
+- [ ] HTML macros and layout file.
+- [ ] "Functional" file structure.
+- [ ] Python 3.x compliant.
+- [ ] Asynchronous AJAX calls.
+- [ ] Administration panel.
+- [ ] Logging.
 - [ ] Stripe subscriptions. (WIP)
 - [ ] RESTful API for payments.
 - [ ] Simple RESTful API to communicate with your app.
@@ -118,8 +118,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://nbilbo.github.io/"><img src="https://avatars.githubusercontent.com/u/28964599?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Felipe Morais</b></sub></a><br /><a href="https://github.com/wanghaisheng/flet-saas-starter/commits?author=nbilbo" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/wanghaisheng"><img src="https://avatars.githubusercontent.com/u/34578189?v=4?s=64" width="64px;" alt=""/><br /><sub><b>wanghaisheng</b></sub></a><br /><a href="https://github.com/wanghaisheng/flet-saas-starter/commits?author=wanghaisheng" title="Code">💻</a></td>
+    <td align="center"><a href="https://nbilbo.github.io/"><img src="https://avatars.githubusercontent.com/u/56805899?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Felipe Morais</b></sub></a><br /><a href="https://github.com/wanghaisheng/flet-saas-starter/commits?author=nbilbo" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/wanghaisheng"><img src="https://avatars.githubusercontent.com/u/2363295?v=4?s=64" width="64px;" alt=""/><br /><sub><b>wanghaisheng</b></sub></a><br /><a href="https://github.com/wanghaisheng/flet-saas-starter/commits?author=wanghaisheng" title="Code">💻</a></td>
 
   </tr>
 </table>
