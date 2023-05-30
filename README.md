@@ -12,10 +12,10 @@ if you are a python guy and looking for a saas solution ,take a look at this
 <p align="center">
 
   <a href="https://github.com/wanghaisheng/flet-saas-starter" >
-    <img src="https://i.imgur.com/jmc2Q1w.png" alt="Logo"  width="49%">
+    <img src="https://raw.githubusercontent.com/wanghaisheng/flet-saas-starter/main/assets/screenshot-homepage.png" alt="Logo"  width="49%">
   </a>
    <a href="https://github.com/wanghaisheng/flet-saas-starter">
-    <img src="https://i.imgur.com/CxkjHhi.png" alt="Logo" width="49%">
+    <img src="https://raw.githubusercontent.com/wanghaisheng/flet-saas-starter/main/assets/screenshot-login.png" alt="Logo" width="49%">
   </a>
 
   <h3 align="center">✨ Free Pure python Flet based multi-platfform desktop APP  template for SaaS startups ✨</h3>
