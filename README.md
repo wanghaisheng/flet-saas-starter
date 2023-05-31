@@ -1,8 +1,7 @@
 
 ##  A boilerplate for building Software-as-Service (SAAS) 
 
-you can also self-hosted on your computer , accessed from browser and  cross platform desktop/mobile APP
-
+Deploy Flet app as a web app and view it in a browser. Package it as a standalone desktop app for Windows, macOS and Linux. Install it on mobile as PWA or view via Flet app for iOS and Android.
 
 if you are a python guy and looking for a saas solution ,take a look at this
 
