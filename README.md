@@ -77,7 +77,18 @@ python main.py
 
 > Hint: 
 
-## 🚀 One click deploy
+https://github.com/SKbarbon/fpyo2ipa
+
+
+https://github.com/SKbarbon/fpyo2apk
+
+
+
+## 🚀 One click package to app
+
+AppVeyor CI pipeline to build Flet app desktop package
+
+github action CI pipeline to build Flet app desktop package
 
 
 

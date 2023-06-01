@@ -1,0 +1,70 @@
+image:
+- Visual Studio 2019
+- macOS
+- Ubuntu
+
+skip_branch_with_pr: true
+stack: python 3.10
+
+environment:
+  GITHUB_TOKEN:
+    secure: Ti46nPnZgFh0nRteU6ma0EhJnCTW7PaMn9hnnewZl4gBFPyRQnXNCwGog02+MRLX
+
+install:
+- pip install -r requirements.txt
+
+build_script:
+-  flet pack main.py --name flet-saas-starter --icon icon.png --product-name flet-saas-starter --product-version "0.1.0" --copyright "Copyright (c) 2022 TiktokaStudio Inc."
+
+test: off
+
+# Publish artifacts to GitHub Releases on "tag" builds
+deploy:
+  provider: GitHub
+  auth_token: $(GITHUB_TOKEN)
+  on:
+    APPVEYOR_REPO_TAG: true
+
+#
+#   Windows package
+# 
+for:
+-
+  matrix:
+    only:
+    - image: Visual Studio 2019
+
+  after_build:
+  - 7z a counter-windows.zip %CD%\dist\*.exe
+
+  artifacts:
+  - path: counter-windows.zip
+
+#
+#   macOS package
+# 
+-
+  matrix:
+    only:
+    - image: macOS
+
+  after_build:
+  - tar -czvf counter-macos.tar.gz -C dist counter.app
+
+  artifacts:
+  - path: counter-macos.tar.gz
+
+#
+#   Linux package
+# 
+-
+  matrix:
+    only:
+    - image: Ubuntu
+
+  after_build:
+  - tar -czvf counter-linux.tar.gz -C dist counter
+
+  artifacts:
+  - path: counter-linux.tar.gz
+
