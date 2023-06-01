@@ -77,18 +77,98 @@ python main.py
 
 > Hint: 
 
-https://github.com/SKbarbon/fpyo2ipa
-
-
-https://github.com/SKbarbon/fpyo2apk
-
 
 
 ## 🚀 One click package to app
 
+### windows  ubuntu macos
+
 AppVeyor CI pipeline to build Flet app desktop package
 
 github action CI pipeline to build Flet app desktop package
+
+
+
+### iphone 
+
+https://github.com/SKbarbon/fpyo2ipa
+
+
+
+```
+1- Create a flet dist folder from your main script.
+
+its recomended to make the dist from a flet v0.6.1 or v0.6.2, because this is the version the package have been tested with.
+flet publish main.py
+2- create a python virtual environment.
+
+python3 -m venv venv
+
+3- activate venv 
+
+source  /Users/wenke/github/flet-tiktoka-studio/venv/bin/activate
+
+install this package.
+
+pip install fpyo2ipa --upgrade
+4- use this build tool.
+
+python3 -m fpyo2ipa.build
+```
+
+
+
+check the app
+
+All work done!
+Your app is in the `pyo2ipadist/build/pyo2ipadist/iOS/xcode`!
+To run a simulator, use:
+$ cd pyo2ipadist
+$ briefcase run iOS
+
+
+
+    raise ImportError(
+ImportError: urllib3 v2.0 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with LibreSSL 2.8.3. See: https://github.com/urllib3/urllib3/issues/2168
+
+
+
+(venv) (base) wenke@wenkedeMac-mini pyo2ipadist % pip install 'urllib3<2.0'
+
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting urllib3<2.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7b/f5/890a0baca17a61c1f92f72b81d3c31523c99bec609e60c292ea55b387ae8/urllib3-1.26.15-py2.py3-none-any.whl (140 kB)
+Installing collected packages: urllib3
+Successfully installed urllib3-1.26.15
+(venv) (base) wenke@wenkedeMac-mini pyo2ipadist % briefcase run iOS  
+
+
+
+
+can simulate and can start app but app got blank 
+
+
+
+
+### android 
+
+https://github.com/SKbarbon/fpyo2apk
+
+
+1- Publish your flet script into flet-pyodide dist. Use this command for that:
+
+flet publish main.py
+2- Create a python virtual environment (highly recommended):
+
+python3 -m venv venv
+3- Install fpyo2apk package:
+
+pip install fpyo2apk --upgrade
+4- Start building your Android App project.
+
+Make sure that your dist folder is in the current cmd's folder, and make sure that you are done with Android Studio setup.
+python3 -m fpyo2apk.build
+
 
 
 

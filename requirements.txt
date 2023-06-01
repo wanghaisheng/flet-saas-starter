@@ -14,3 +14,7 @@ python-slugify
 SQLAlchemy==2.0.2
 isort==5.12.0
 blue==0.9.1
+pyinstaller
+pillow
+fpyo2ipa
+fpyo2apk

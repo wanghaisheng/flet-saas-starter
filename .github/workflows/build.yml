@@ -72,6 +72,28 @@ jobs:
       run: |
         flet pack main.py --name flet-saas-starter --icon icon.png --product-name flet-saas-starter --product-version "0.1.0" --copyright "Copyright (c) 2022 TiktokaStudio Inc."
 
+    - name: build for ios
+      if: matrix.os == 'macos-latest'
+      run: |
+        flet publish main.py 
+        python3 -m venv venv
+        source venv/bin/activate      
+        pip install fpyo2apk --upgrade
+        python3 -m fpyo2ipa.build --name flet-saas-starter  --copyright "Copyright (c) 2022 TiktokaStudio Inc."
+
+
+
+    - name: build for android
+      if: matrix.os == 'macos-latest'
+      run: |
+        flet publish main.py 
+        python3 -m venv venv
+        source venv/bin/activate  
+        pip install fpyo2ipa --upgrade
+      
+        python3 -m fpyo2apk.build --name flet-saas-starter  --copyright "Copyright (c) 2022 TiktokaStudio Inc."
+
+
     - name: Upload files
       # arg info: https://github.com/ncipollo/release-action#release-action
       uses: ncipollo/release-action@v1

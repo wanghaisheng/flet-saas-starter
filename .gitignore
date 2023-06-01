@@ -165,3 +165,8 @@ accounts.json
 
 
 .DS_Store
+
+
+# build 
+
+build/
