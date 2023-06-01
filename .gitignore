@@ -162,3 +162,6 @@ cython_debug/
 # tiktoka
 db.sqlite3
 accounts.json
+
+
+.DS_Store
