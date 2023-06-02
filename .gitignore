@@ -170,3 +170,5 @@ accounts.json
 # build 
 
 build/
+fpyo2apkdist/
+pyo2ipadist/

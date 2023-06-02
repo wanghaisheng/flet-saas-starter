@@ -152,6 +152,8 @@ can simulate and can start app but app got blank
 
 ### android 
 
+#### Be sure that Android Studio is installed and setuped. 
+
 https://github.com/SKbarbon/fpyo2apk
 
 
@@ -161,13 +163,21 @@ flet publish main.py
 2- Create a python virtual environment (highly recommended):
 
 python3 -m venv venv
+
 3- Install fpyo2apk package:
 
 pip install fpyo2apk --upgrade
+
 4- Start building your Android App project.
 
 Make sure that your dist folder is in the current cmd's folder, and make sure that you are done with Android Studio setup.
 python3 -m fpyo2apk.build
+
+
+$ cd fpyo2apkdist
+$ briefcase create Android
+$ briefcase build Android
+$ briefcase run Android
 
 
 
@@ -175,6 +185,9 @@ python3 -m fpyo2apk.build
 ## 🧰 Built With
 
 - [Flet](https://github.com/flet-dev/flet)
+
+https://github.com/ndonkoHenri/Python-Desktop-Notifications/tree/master
+
 
 
 ## 🤲🏻 Contributing
